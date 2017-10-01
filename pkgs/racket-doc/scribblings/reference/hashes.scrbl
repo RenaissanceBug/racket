@@ -292,8 +292,9 @@ Returns @racket[#t] if @racket[hash] contains a value for the given
 
 Composes @racket[hash-ref] and @racket[hash-set!] to update an
 existing mapping in @racket[hash], where the optional
-@racket[failure-result] argument is used as in @racket[hash-ref] when
-no mapping exists for @racket[key] already. See the caveat above about
+@racket[failure-result] argument is used as input to @racket[updater]
+for behavior analogous to that of @racket[hash-ref] when no mapping
+exists for @racket[key] already. See the caveat above about
 concurrent updates.
 
 @see-also-caveats[]}
@@ -309,8 +310,9 @@ concurrent updates.
 
 Composes @racket[hash-ref] and @racket[hash-set] to functionally
 update an existing mapping in @racket[hash], where the optional
-@racket[failure-result] argument is used as in @racket[hash-ref] when
-no mapping exists for @racket[key] already.
+@racket[failure-result] argument is used as input to @racket[updater]
+for behavior analogous to that of @racket[hash-ref] when no mapping
+exists for @racket[key] already.
 
 @see-also-mutable-key-caveat[]}
 
